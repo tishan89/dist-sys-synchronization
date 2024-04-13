@@ -22,7 +22,7 @@ private static final SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:s
        String lockName = args[0];
        System.out.println("Contesting to acquire lock " + lockName);
 try {
-           DistributedLock lock = new DistributedLock(lockName);
+           DistributedLock lock = new DistributedLock(lockName, "DummyProcess");
 
            lock.acquireLock();
            System.out.println("I Got the lock at " + getCurrentTimeStamp());
